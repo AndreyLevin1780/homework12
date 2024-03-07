@@ -14,6 +14,17 @@ public class Main {
         print(onegin);
         print(mtsyri);
 
+        System.out.println(pushkin.toString() + ".");
+        System.out.println(lermontov.toString() + ".");
+        System.out.println(onegin.toString() + ".");
+        System.out.println(mtsyri.toString() + ".");
+
+        System.out.println(pushkin.equals(lermontov));
+        System.out.println(onegin.equals(mtsyri));
+        System.out.println(pushkin.hashCode());
+        System.out.println(lermontov.hashCode());
+        System.out.println(onegin.hashCode());
+        System.out.println(mtsyri.hashCode());
     }
     private static void print(Book book) {
         System.out.println(
@@ -21,5 +32,5 @@ public class Main {
                         ", название: " + book.getBookTitle() +
                         ", год издания: " + book.getDateOfIssue() + "."
         );
-    }
+        }
 }

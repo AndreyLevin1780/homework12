@@ -10,7 +10,11 @@ public class Book {
         this.dateOfIssue = dateOfIssue;
     }
 
-    public String getBookTitle() {
+    public String toString() {
+        return "Название: " + this.bookTitle + "Автор: " + this.author + "Год издания: " + this.dateOfIssue;
+    }
+
+        public String getBookTitle() {
         return bookTitle;
     }
 
@@ -24,5 +28,17 @@ public class Book {
 
     public void setDateOfIssue(int dateOfIssue) {
         this.dateOfIssue = dateOfIssue;
+    }
+
+    public boolean equals(Book anotherBook) {
+            if (this.getBookTitle().equals(anotherBook.getBookTitle())) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public int hashCode () {
+        return java.util.Objects.hash(this.getBookTitle());
     }
 }
