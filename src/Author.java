@@ -1,24 +1,27 @@
+import java.util.Objects;
+
 public class Author {
 
     private final String name;
     private final String surename;
 
+
     public Author(String name, String surename) {
         this.name = name;
         this.surename = surename;
     }
+
     public String toString() {
         return "Имя: " + this.name + ", Фамилия: " + this.surename;
     }
 
 
-    public boolean equals(Author anotherAuthor) {
-        if (this.getName().equals(anotherAuthor.getName()) && this.getSurename().equals(anotherAuthor.getSurename())) {
-
-            return true;
-        } else {
-            return false;
-        }
+    @Override
+    public boolean equals(Object anotherAuthor) {
+        if (this == anotherAuthor) return true;
+        if (anotherAuthor == null || getClass() != anotherAuthor.getClass()) return false;
+        Author author = (Author) anotherAuthor;
+        return Objects.equals(name, author.name) && Objects.equals(surename, author.surename);
     }
 
     public String getName() {
